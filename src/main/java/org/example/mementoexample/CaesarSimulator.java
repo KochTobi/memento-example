@@ -1,9 +1,6 @@
 package org.example.mementoexample;
 
 import com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent;
-import com.vaadin.flow.component.Key;
-import com.vaadin.flow.component.KeyModifier;
-import com.vaadin.flow.component.Shortcuts;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -103,14 +100,14 @@ public class CaesarSimulator extends VerticalLayout {
     messageText = new TextField("Message");
     newCipherButton = new Button("New Cipher");
     encryptedMessage = new TextField();
-    encryptedMessage.setEnabled(false);
+    encryptedMessage.setReadOnly(true);
     HorizontalLayout horizontalLayout = new HorizontalLayout(messageText, newCipherButton);
     horizontalLayout.setDefaultVerticalComponentAlignment(Alignment.BASELINE);
     historyView = new VerticalLayout();
     add(horizontalLayout, encryptedMessage, historyView);
   }
 
-  public class TimedScrollMemento {
+  public static class TimedScrollMemento {
 
     public final Instant instant;
     public final ScrollMemento scrollMemento;
