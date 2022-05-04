@@ -107,14 +107,5 @@ public class CaesarSimulator extends VerticalLayout {
     add(horizontalLayout, encryptedMessage, historyView);
   }
 
-  public static class TimedScrollMemento {
-
-    public final Instant instant;
-    public final ScrollMemento scrollMemento;
-
-    private TimedScrollMemento(Instant instant, ScrollMemento scrollMemento) {
-      this.instant = instant;
-      this.scrollMemento = scrollMemento;
-    }
-  }
+  public record TimedScrollMemento(Instant instant, ScrollMemento scrollMemento) {}
 }
